@@ -1,0 +1,83 @@
+<h1>HEALTH AND ACCESSIBILITY</h1>
+
+<h3>GENERAL STATISTICS</h3>
+
+<div ng-show="!statisticsLoaded">Fetching statistics...</div>
+<div ng-show="statisticsLoaded">
+    <table style="border: solid 1px black">
+        <tr>
+            <td>&nbsp;Installed grades</td>
+            <td>
+                <div ng-repeat="installedGrade in pcsStatistics.installedGrades">{{installedGrade}}<br></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;Content summary</td>
+            <td>{{pcsStatistics.lessonCount}} lessons downloaded</td>
+        </tr>
+        <tr>
+            <td>&nbsp;Content size</td>
+            <td>{{pcsStatistics.lessonMBSize}} MB</td>
+        </tr>
+        <tr>
+            <td>&nbsp;PSC version</td>
+            <td>{{pcsStatistics.pscVersion}}</td>
+        </tr>
+        <tr>
+            <td>&nbsp;Operating system version&nbsp;&nbsp;</td>
+            <td>{{deviceInfo.os_version}}</td>
+        </tr>
+
+    </table>
+</div>
+
+<h3>URL ACCESSIBILITY</h3>
+
+<div ng-show="isValidatingURLs">
+    Checking web addresses...
+</div>
+<div ng-show="!isValidatingURLs">
+    <div ng-show="validationResults.hasErrors">
+        The following URLs cannot be reached or returned errors...
+        <table style="border: solid 1px black">
+            <tr>
+                <th>URL</th>
+                <th>STATUS&nbsp;</th>
+            </tr>
+            <tr ng-repeat="erroredURL in validationResults.erroredURLs">
+                <td>&nbsp;{{erroredURL.url}}&nbsp;&nbsp;</td>
+                <td>{{erroredURL.requestStatus}}</td>
+            </tr>
+        </table>
+    </div>
+    <div ng-show="!validationResults.hasErrors">
+        All URLs are accessible
+    </div>
+
+    <br>
+
+    <button ng-click="validateURLAccessibility()">Validate URL Accessibility</button>
+
+    <br><br>
+    <!-- FULL URL REPORT -->
+    <div style="text-decoration: underline; cursor: pointer;" ng-show="!viewFullReport" ng-click="toggleFullReport()">View full URL report</div>
+    <div style="text-decoration: underline; cursor: pointer;" ng-show="viewFullReport" ng-click="toggleFullReport()">Hide full URL report</div>
+    <div ng-show="viewFullReport">
+        <table style="border: solid 1px black">
+            <tr>
+                <th>URL</th>
+                <th>ELAPSED TIME</th>
+            </tr>
+            <tr ng-repeat="erroredURL in validationResults.erroredURLs">
+                <td>&nbsp;{{erroredURL.url}}&nbsp;&nbsp;</td>
+                <td>COULD NOT REACH&nbsp;&nbsp;</td>
+            </tr>
+            <tr ng-repeat="successURL in validationResults.successURLs">
+                <td>&nbsp;{{successURL.url}}&nbsp;&nbsp;</td>
+                <td>{{successURL.requestTime}} ms</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
