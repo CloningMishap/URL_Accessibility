@@ -1,40 +1,32 @@
-# angular-seed — the seed for AngularJS apps
+# URL_Accessibility — A simple angular single-page-app that attempts to verify that certain URLs are accessible from the user's browser
 
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
-You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
-
-The seed contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
-
-The seed app doesn't do much, just shows how to wire two controllers and views together.
-
+This project was built using the angular-see and is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 
 ## Getting Started
 
-To get you started you can simply clone the angular-seed repository and install the dependencies:
+To get you started you can simply clone the URL_Accessibility repository and install the dependencies:
 
 ### Prerequisites
 
-You need git to clone the angular-seed repository. You can get git from
+You need git to clone the URL_Accessibility repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
-We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
+We also use a number of node.js tools to initialize and test URL_Accessibility. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-### Clone angular-seed
+### Clone URL_Accessibility
 
-Clone the angular-seed repository using [git][git]:
+Clone the URL_Accessibility repository using [git][git]:
 
 ```
-git clone https://github.com/angular/angular-seed.git
-cd angular-seed
+git clone https://github.com/CloningMishap/URL_Accessibility.git
+cd URL_Accessibility
 ```
 
-If you just want to start a new project without the angular-seed commit history then you can do:
+If you just want to start a new project without the URL_Accessibility commit history then you can do:
 
 ```bash
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
+git clone --depth=1 https://github.com/CloningMishap/URL_Accessibility.git <your-project-name>
 ```
 
 The `depth=1` tells git to only pull down one commit worth of historical data.
